@@ -1,0 +1,20 @@
+name: First Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Display File
+        run: cat hello.txt
+
+      - name: Success Message
+        run: echo "CI Pipeline Executed Successfully!"
